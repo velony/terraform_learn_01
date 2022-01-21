@@ -1,3 +1,12 @@
+terraform {
+  required_version = ">=0.12"
+  backend "s3" {
+    bucket = "mysql-jenkins-2-pet"
+    key    = "myapp/state.tfstate"
+    region = "eu-central-1"
+  }
+}
+
 provider "aws" {
   region     = "eu-central-1"
 }
